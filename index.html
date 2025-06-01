@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farhan code</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .navbar.scrolled {
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      color: #007BFF;
+    }
+
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+    }
+
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #007BFF, #00C6FF);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .section {
+      padding: 100px 0;
+      background: #f9f9f9;
+    }
+
+    .section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <div class="logo">Farhan</div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Welcome to MyLanding page</h1>
+      <p>Your one-stop solution for web presence.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        We’re a creative digital agency delivering results through innovation, passion, and teamwork. Whether you’re a startup or a large enterprise, we help you grow and thrive online.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>
+         Web Design & Development<br/>
+         UI/UX Design<br/>
+         SEO Optimization<br/>
+         E-commerce Solutions<br/>
+         Social Media Marketing
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>
+         Email: support@mylanding.com<br/>
+         Phone: +1 234 567 890<br/>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Farhan. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
